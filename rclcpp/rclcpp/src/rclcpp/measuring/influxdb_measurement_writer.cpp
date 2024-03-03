@@ -24,7 +24,7 @@ InfluxDBMeasurementWriter::InfluxDBMeasurementWriter(const rclcpp::MessageTracke
     host_topic_ = host_info.topic_name;
 
     // todo: These hardcoded variables could be read from a config file somewhere.
-    // Furthermore, it should be a static struct that is assigned from a static function call.
+    // Furthermore, it should be a static struct that is assigned from a static function call. This way the file is not read for each instance of influxdbmeasurementwriter.
     // Unless it is necessary to support multiple, in which case the default-config stuff needs to be extended to allow a file path to influx config files.
     static std::string influx_ip = "127.0.0.1";
     static uint32_t influx_port = 8086;
